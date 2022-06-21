@@ -27,7 +27,6 @@ const keys = {
         pressed: false,
     },
 };
-let lastKey;
 
 class Sprite {
     constructor({ position, velocity }) {
@@ -78,9 +77,9 @@ function animate() {
     enemy.velocity.x = 0;
 
     // Movimento do Jogador
-    if (keys.a.pressed && lastKey === 'a') {
+    if (keys.a.pressed && player.lastKey === 'a') {
         player.velocity.x = -1;
-    } else if (keys.d.pressed && lastKey === 'd') {
+    } else if (keys.d.pressed && player.lastKey === 'd') {
         player.velocity.x = 1;
     }
 
@@ -98,18 +97,18 @@ window.addEventListener('keydown', event => {
     switch (event.key) {
         case 'd':
             keys.d.pressed = true;
-            lastKey = 'd';
+            player.lastKey = 'd';
             break;
 
         case 'a':
             keys.a.pressed = true;
-            lastKey = 'a';
+            player.lastKey = 'a';
             break;
         case 'w':
             keys.w.pressed = true;
             player.velocity.y = -10;
             break;
-        
+
         case 'ArrowRight':
             keys.ArrowRight.pressed = true;
             enemy.lastKey = 'ArrowRight';
