@@ -125,6 +125,7 @@ function animate() {
         player.attackBox.position.y <= enemy.position.y + enemy.height &&
         player.isAttacking
     ) {
+        player.isAttacking = false;
         console.log('colidiu');
     }
 }
