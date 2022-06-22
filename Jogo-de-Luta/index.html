@@ -26,9 +26,29 @@
             >
                 <!-- vida do player -->
                 <div
-                    id="playerHealth"
-                    style="background-color: yellow; width: 100%; height: 30px"
-                ></div>
+                    style="
+                        position: relative;
+                        width: 100%;
+                        height: 30px;
+                        display: flex;
+                        justify-content: flex-end;
+                    "
+                >
+                    <div
+                        style="background-color: red; width: 100%; height: 30px"
+                    ></div>
+                    <div
+                        id="playerHealth"
+                        style="
+                            position: absolute;
+                            background: yellow;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                        "
+                    ></div>
+                </div>
                 <!-- timer -->
                 <div
                     style="

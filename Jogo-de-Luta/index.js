@@ -161,7 +161,9 @@ function animate() {
         enemy.isAttacking
     ) {
         enemy.isAttacking = false;
-        console.log('o inimigo acertou um hit!');
+        player.health -= 20;
+        document.querySelector('#playerHealth').style.width =
+            player.health + '%';
     }
 }
 
