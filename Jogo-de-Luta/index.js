@@ -29,14 +29,18 @@ const keys = {
 };
 
 class Sprite {
-    constructor({ position, velocity, color = 'red' }) {
+    constructor({ position, velocity, color = 'red', offset }) {
         this.position = position;
         this.velocity = velocity;
         this.width = 50;
         this.height = 150;
         this.lastKey;
         this.attackBox = {
-            position: this.position,
+            position: {
+                x: this.position.x,
+                y: this.position.y,
+            },
+            offset,
             width: 100,
             height: 50,
         };
@@ -49,19 +53,22 @@ class Sprite {
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 
         // attack box
-        if (this.isAttacking) {
-            ctx.fillStyle = 'green';
-            ctx.fillRect(
-                this.attackBox.position.x,
-                this.attackBox.position.y,
-                this.attackBox.width,
-                this.attackBox.height,
-            );
-        }
+        // if (this.isAttacking) {
+        ctx.fillStyle = 'green';
+        ctx.fillRect(
+            this.attackBox.position.x,
+            this.attackBox.position.y,
+            this.attackBox.width,
+            this.attackBox.height,
+        );
+        // }
     }
 
     update() {
         this.draw();
+        this.attackBox.position.x = this.position.x - this.attackBox.offset.x;
+        this.attackBox.position.y = this.position.y;
+
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
 
@@ -81,6 +88,10 @@ class Sprite {
 const player = new Sprite({
     position: { x: 200, y: 0 },
     velocity: { x: 0, y: 0 },
+    offset: {
+        x: 0,
+        y: 0,
+    },
 });
 
 const enemy = new Sprite({
@@ -90,6 +101,10 @@ const enemy = new Sprite({
     },
     velocity: { x: 0, y: 0 },
     color: 'blue',
+    offset: {
+        x: 50,
+        y: 0,
+    },
 });
 
 function animate() {
