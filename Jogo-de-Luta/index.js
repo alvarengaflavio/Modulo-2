@@ -53,15 +53,15 @@ class Sprite {
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 
         // attack box
-        // if (this.isAttacking) {
-        ctx.fillStyle = 'green';
-        ctx.fillRect(
-            this.attackBox.position.x,
-            this.attackBox.position.y,
-            this.attackBox.width,
-            this.attackBox.height,
-        );
-        // }
+        if (this.isAttacking) {
+            ctx.fillStyle = 'green';
+            ctx.fillRect(
+                this.attackBox.position.x,
+                this.attackBox.position.y,
+                this.attackBox.width,
+                this.attackBox.height,
+            );
+        }
     }
 
     update() {
