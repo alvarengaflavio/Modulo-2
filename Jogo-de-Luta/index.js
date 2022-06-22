@@ -29,9 +29,10 @@ const keys = {
 };
 
 class Sprite {
-    constructor({ position, velocity }) {
+    constructor({ position, velocity, color = 'red' }) {
         this.position = position;
         this.velocity = velocity;
+        this.width = 50;
         this.height = 150;
         this.lastKey;
         this.attackBox = {
@@ -39,11 +40,12 @@ class Sprite {
             width: 100,
             height: 50,
         };
+        this.color = color;
     }
 
     draw() {
-        ctx.fillStyle = 'red';
-        ctx.fillRect(this.position.x, this.position.y, 50, this.height);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 
         // attack box
         ctx.fillStyle = 'green';
@@ -77,6 +79,7 @@ const enemy = new Sprite({
         y: 0,
     },
     velocity: { x: 0, y: 0 },
+    color: 'blue',
 });
 
 function animate() {
@@ -102,6 +105,15 @@ function animate() {
         enemy.velocity.x = -5;
     } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
         enemy.velocity.x = 5;
+    }
+
+    // detectar colisão
+    if (
+        player.attackBox.position.x + player.attackBox.width >=
+            enemy.position.x &&
+        player.attackBox.position.x <= enemy.position.x + enemy.width
+    ) {
+        console.log('colidiu');
     }
 }
 
