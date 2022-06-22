@@ -46,6 +46,7 @@ class Sprite {
         };
         this.color = color;
         this.isAttacking = false;
+        this.health = 100;
     }
 
     draw() {
@@ -81,7 +82,7 @@ class Sprite {
         this.isAttacking = true;
         setTimeout(() => {
             this.isAttacking = false;
-        }, 100);
+        }, 150);
     }
 }
 
@@ -151,7 +152,8 @@ function animate() {
         player.isAttacking
     ) {
         player.isAttacking = false;
-        console.log('colidiu');
+        enemy.health -= 20;
+        document.querySelector('#enemyHealth').style.width = enemy.health + '%';
     }
 
     if (

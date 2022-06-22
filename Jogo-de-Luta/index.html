@@ -26,6 +26,7 @@
             >
                 <!-- vida do player -->
                 <div
+                    id="playerHealth"
                     style="background-color: yellow; width: 100%; height: 30px"
                 ></div>
                 <!-- timer -->
@@ -38,9 +39,22 @@
                     "
                 ></div>
                 <!-- vida do enemy -->
-                <div
-                    style="background-color: yellow; width: 100%; height: 30px"
-                ></div>
+                <div style="position: relative; width: 100%; height: 30px">
+                    <div
+                        style="background-color: red; width: 10; height: 30px"
+                    ></div>
+                    <div
+                        id="enemyHealth"
+                        style="
+                            position: absolute;
+                            background: yellow;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                        "
+                    ></div>
+                </div>
             </div>
             <canvas></canvas>
         </div>
