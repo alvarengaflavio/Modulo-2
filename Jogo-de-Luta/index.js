@@ -41,6 +41,7 @@ class Sprite {
             height: 50,
         };
         this.color = color;
+        this.isAttacking = false;
     }
 
     draw() {
@@ -65,6 +66,13 @@ class Sprite {
         this.position.y + this.height + this.velocity.y >= canvas.height
             ? (this.velocity.y = 0) // se Sprite no chão vy = 0, senão acelera g
             : (this.velocity.y += gravity);
+    }
+
+    attack() {
+        this.isAttacking = true;
+        setTimeout(() => {
+            this.isAttacking = false;
+        }, 100);
     }
 }
 
@@ -114,7 +122,8 @@ function animate() {
         player.attackBox.position.x <= enemy.position.x + enemy.width &&
         player.attackBox.position.y + player.attackBox.height >=
             enemy.position.y &&
-        player.attackBox.position.y <= enemy.position.y + enemy.height
+        player.attackBox.position.y <= enemy.position.y + enemy.height &&
+        player.isAttacking
     ) {
         console.log('colidiu');
     }
@@ -136,6 +145,10 @@ window.addEventListener('keydown', event => {
         case 'w':
             keys.w.pressed = true;
             player.velocity.y = -20;
+            break;
+
+        case ' ':
+            player.attack();
             break;
 
         case 'ArrowRight':
