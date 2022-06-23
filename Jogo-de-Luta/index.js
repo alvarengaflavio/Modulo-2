@@ -122,22 +122,26 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
 }
 
 let timer = 100;
+function determineWinner({ player, enemy }) {
+    document.querySelector('#displayText').style.display = 'flex';
+    if (player.health === enemy.health) {
+        document.querySelector('#displayText').innerHTML = 'EMPATE';
+    } else if (player.health > enemy.health) {
+        document.querySelector('#displayText').innerHTML =
+            'VITÓRIA DO JOGADOR 1';
+    } else {
+        document.querySelector('#displayText').innerHTML =
+            'VITÓRIA DO JOGADOR 2';
+    }
+}
+
 function decreaseTimer() {
     if (timer > 0) {
         setTimeout(decreaseTimer, 1000);
         timer--;
         document.querySelector('#timer').innerHTML = timer;
-    } else if (player.health === enemy.health) {
-        document.querySelector('#displayText').innerHTML = 'EMPATE';
-        document.querySelector('#displayText').style.display = 'flex';
-    } else if (player.health > enemy.health) {
-        document.querySelector('#displayText').innerHTML =
-            'VITÓRIA DO JOGADOR 1';
-        document.querySelector('#displayText').style.display = 'flex';
     } else {
-        document.querySelector('#displayText').innerHTML =
-            'VITÓRIA DO JOGADOR 2';
-        document.querySelector('#displayText').style.display = 'flex';
+        determineWinner({ player, enemy });
     }
 }
 decreaseTimer();
@@ -185,6 +189,11 @@ function animate() {
         player.health -= 20;
         document.querySelector('#playerHealth').style.width =
             player.health + '%';
+    }
+
+    // FINALIZAR O JOGO BASEADO NA VIDA
+    if (player.health <= 0 || enemy.health <= 0) {
+        determineWinner({ player, enemy });
     }
 }
 
