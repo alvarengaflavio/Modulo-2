@@ -61,7 +61,7 @@ class Fighter {
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
 
-        this.position.y + this.height + this.velocity.y >= canvas.height
+        this.position.y + this.height + this.velocity.y >= canvas.height - 96
             ? (this.velocity.y = 0) // se Sprite no chão vy = 0, senão acelera g
             : (this.velocity.y += gravity);
     }
