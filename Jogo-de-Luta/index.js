@@ -121,8 +121,8 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     );
 }
 
-let timer = 100;
-function determineWinner({ player, enemy }) {
+function determineWinner({ player, enemy, timerId }) {
+    clearTimeout(timerId);
     document.querySelector('#displayText').style.display = 'flex';
     if (player.health === enemy.health) {
         document.querySelector('#displayText').innerHTML = 'EMPATE';
@@ -134,14 +134,15 @@ function determineWinner({ player, enemy }) {
             'VITÓRIA DO JOGADOR 2';
     }
 }
-
+let timer = 100;
+let timerId;
 function decreaseTimer() {
     if (timer > 0) {
-        setTimeout(decreaseTimer, 1000);
+        timerId = setTimeout(decreaseTimer, 1000);
         timer--;
         document.querySelector('#timer').innerHTML = timer;
     } else {
-        determineWinner({ player, enemy });
+        determineWinner({ player, enemy, timerId });
     }
 }
 decreaseTimer();
@@ -193,7 +194,7 @@ function animate() {
 
     // FINALIZAR O JOGO BASEADO NA VIDA
     if (player.health <= 0 || enemy.health <= 0) {
-        determineWinner({ player, enemy });
+        determineWinner({ player, enemy, timerId });
     }
 }
 
