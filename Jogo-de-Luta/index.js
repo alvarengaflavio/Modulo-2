@@ -121,12 +121,23 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
     );
 }
 
-let timer = 10;
+let timer = 100;
 function decreaseTimer() {
     if (timer > 0) {
         setTimeout(decreaseTimer, 1000);
         timer--;
         document.querySelector('#timer').innerHTML = timer;
+    } else if (player.health === enemy.health) {
+        document.querySelector('#displayText').innerHTML = 'EMPATE';
+        document.querySelector('#displayText').style.display = 'flex';
+    } else if (player.health > enemy.health) {
+        document.querySelector('#displayText').innerHTML =
+            'VITÓRIA DO JOGADOR 1';
+        document.querySelector('#displayText').style.display = 'flex';
+    } else {
+        document.querySelector('#displayText').innerHTML =
+            'VITÓRIA DO JOGADOR 2';
+        document.querySelector('#displayText').style.display = 'flex';
     }
 }
 decreaseTimer();
