@@ -9,7 +9,7 @@ class Sprite {
         this.framesMax = framesMax;
         this.framesCurrent = 0;
         this.framesElapsed = 0;
-        this.framesHold = 10;
+        this.framesHold = 20;
     }
 
     draw() {
@@ -29,9 +29,12 @@ class Sprite {
 
     update() {
         this.draw();
-        this.framesCurrent < this.framesMax - 1
-            ? (this.framesCurrent += 1)
-            : (this.framesCurrent = 0);
+        this.framesElapsed++;
+        if (this.framesElapsed % this.framesHold === 0) {
+            this.framesCurrent < this.framesMax - 1
+                ? (this.framesCurrent += 1)
+                : (this.framesCurrent = 0);
+        }
     }
 }
 
