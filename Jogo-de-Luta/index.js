@@ -97,7 +97,7 @@ function animate() {
         enemy.velocity.x = 5;
     }
 
-    // detectar colisão
+    // Detectar Colisão
     if (
         rectangularCollision({ rectangle1: player, rectangle2: enemy }) &&
         player.isAttacking
@@ -117,7 +117,7 @@ function animate() {
             player.health + '%';
     }
 
-    // FINALIZAR O JOGO BASEADO NA VIDA
+    // FINALIZAR JOGO BASEADO NA VIDA
     if (player.health <= 0 || enemy.health <= 0) {
         determineWinner({ player, enemy, timerId });
     }
