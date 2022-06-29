@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300&display=swap');
+
+h1,
+h2 {
+    color: aqua; /* muda a cor da fonte */
+    font-size: 2.5rem; /* muda o tamanho da fonte */
+    background-color: blueviolet; /* cor do fundo */
+    font-family: 'Press Start 2P', cursive; /* tipo de fonte da letra */
+    font-weight: 300; /* tamanho do negrito da fonte */
+    font-style: italic; /* estilo da fonte */
+}
+
+/* sintaxe #id para pegar uma id específica */
+#diferentao {
+    color: blueviolet;
+    font-family: 'Roboto Mono', monospace;
+    background-color: aquamarine;
+    font-style: oblique;
+    font-size: 1cm;
+}
