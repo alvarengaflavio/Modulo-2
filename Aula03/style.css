@@ -4,7 +4,7 @@
 * {
     padding: 0; /* espeçamento interno */
     margin: 0; /* espaçamento externo */
-    box-sizing: 0; /*  */
+    box-sizing: 0; /* caixa externa da caixa */
 }
 
 h1,
@@ -15,6 +15,7 @@ h2 {
     font-family: 'Press Start 2P', cursive; /* tipo de fonte da letra */
     font-weight: 300; /* tamanho do negrito da fonte */
     font-style: italic; /* estilo da fonte */
+    text-align: center;
 }
 
 /* sintaxe #id para pegar uma id específica */
@@ -24,12 +25,16 @@ h2 {
     background-color: darkcyan;
     font-style: oblique;
     font-size: 2cm;
+    padding: 5rem, 2rem, 5rem, 2rem;
 }
 
 /* id se seleciona por ponto # */
 #titulo-pagina {
-    /* color: rgb(238, 255, 0); */
+    color: darkred;
+    font-size: 3rem;
     background-image: url(./imagemicones.jpg);
+    padding: 5rem;
+    border: solid 5px darkred;
 }
 
 /* class se seleciona por ponto . */
@@ -51,4 +56,16 @@ img#imagem-icone {
     width: 50%; /* tamanho da imagem */
     height: 30vh; /* altura da imagem */
     object-fit: cover; /* corta a imagem quando nao cabe  */
+}
+
+#h3-da-massa {
+    padding-left: 5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    background: rgb(195, 34, 34);
+    background: linear-gradient(
+        0deg,
+        rgba(195, 34, 34, 1) 21%,
+        rgba(253, 212, 45, 0.9528011033514968) 97%
+    );
 }
