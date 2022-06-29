@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@300&display=swap');
 
+* {
+    padding: 0; /* espeçamento interno */
+    margin: 0; /* espaçamento externo */
+    box-sizing: 0; /*  */
+}
+
 h1,
-h3 {
+h2 {
     color: aqua; /* muda a cor da fonte */
     font-size: 2.5rem; /* muda o tamanho da fonte */
-    background-color: blueviolet; /* cor do fundo */
+    /* background-color: blueviolet; cor do fundo */
     font-family: 'Press Start 2P', cursive; /* tipo de fonte da letra */
     font-weight: 300; /* tamanho do negrito da fonte */
     font-style: italic; /* estilo da fonte */
@@ -13,20 +19,36 @@ h3 {
 
 /* sintaxe #id para pegar uma id específica */
 #diferentao {
-    color: rgb(255, 255, 255);
     font-family: 'Roboto Mono', monospace;
-    background-color: rgb(11, 175, 197);
+    color: brown;
+    background-color: darkcyan;
     font-style: oblique;
     font-size: 2cm;
 }
 
 /* id se seleciona por ponto # */
 #titulo-pagina {
-    color: rgb(238, 255, 0);
+    /* color: rgb(238, 255, 0); */
+    background-image: url(./imagemicones.jpg);
 }
 
 /* class se seleciona por ponto . */
 .titulo-css {
     color: bisque;
-    background-color: darkred;
+    background: rgb(195, 34, 34);
+    background: linear-gradient(
+        0deg,
+        rgba(195, 34, 34, 1) 21%,
+        rgba(253, 212, 45, 0.9528011033514968) 97%
+    );
+}
+
+#teste-corte {
+    width: 100%; /* se reduzir o tamanho ele corta a imagem  */
+}
+
+img#imagem-icone {
+    width: 50%; /* tamanho da imagem */
+    height: 30vh; /* altura da imagem */
+    object-fit: cover; /* corta a imagem quando nao cabe  */
 }
