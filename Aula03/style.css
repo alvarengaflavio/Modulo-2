@@ -19,3 +19,14 @@ h2 {
     font-style: oblique;
     font-size: 1cm;
 }
+
+/* id se seleciona por ponto # */
+#titulo-pagina {
+    color: rgb(238, 255, 0);
+}
+
+/* class se seleciona por ponto . */
+.titulo-css {
+    color: bisque;
+    background-color: darkred;
+}
