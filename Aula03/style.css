@@ -65,7 +65,8 @@ img#imagem-icone {
     background: rgb(195, 34, 34);
     background: linear-gradient(
         0deg,
-        rgba(195, 34, 34, 1) 21%,
-        rgba(253, 212, 45, 0.9528011033514968) 97%
+        rgba(195, 34, 34, 1) 26%,
+        rgba(226, 128, 40, 1) 63%,
+        rgba(206, 255, 0, 0.9528011033514968) 99%
     );
 }
