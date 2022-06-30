@@ -25,7 +25,17 @@ div {
     padding: 2rem;
     border: 2px solid black;
     color: black;
-    text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    div {
+        background-color: fuchsia;
+        width: 20%;
+    }
 }
