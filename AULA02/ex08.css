@@ -1,0 +1,21 @@
+.main-section {
+    margin: 0 auto;
+}
+
+body {
+    margin: 0;
+    padding: 1rem;
+}
+
+.main-section div {
+    padding: 0.25rem 0 0 1rem;
+    /* padding-left: 1rem;
+    padding-bottom: 0.25rem; */
+}
+
+.button {
+    margin: 0 auto;
+    display: block;
+    width: 6rem;
+    height: 2.5rem;
+}
