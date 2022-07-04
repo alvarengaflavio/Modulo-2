@@ -23,10 +23,18 @@ div {
     width: 300px;
     height: 300px;
     padding: 2rem;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     color: black;
     justify-content: center;
     align-items: center;
+}
+
+div:hover {
+    /* inset | offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: inset -2px -2px 15px 0.1rem rgba(255, 255, 0, 0.5);
+    /* scale: 1.1; */
+    transition: 1.25s ease-in-out;
+    transform: rotate3d(0, 1, 1, 75deg);
 }
 
 @media (max-width: 900px) {
