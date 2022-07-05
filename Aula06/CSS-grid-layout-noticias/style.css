@@ -73,6 +73,7 @@ section#page-four article#anuncio div {
     border: solid 5px #ccc;
 }
 
+/* alterar a partir da quarta filha */
 section#page-four article:nth-child(n + 4) {
     display: grid;
     grid-template-columns: 1fr 1fr;
