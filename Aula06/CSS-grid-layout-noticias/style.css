@@ -46,7 +46,6 @@ section#page-four {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-gap: 50px;
-
     padding: 3rem;
     max-width: 1200px;
     margin: 0 auto;
