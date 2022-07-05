@@ -32,7 +32,7 @@ nav ul {
 }
 
 nav ul li {
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 h1 {
@@ -46,9 +46,8 @@ section#page-three {
     grid-template-columns: 300px 800px 300px;
     grid-template-rows: auto;
     grid-template-areas:
-        "aside-one div aside-two"
-        "aside-one main aside-two"
-    ;
+        'aside-one div aside-two'
+        'aside-one main aside-two';
 
     grid-gap: 20px;
     padding: 3rem;
