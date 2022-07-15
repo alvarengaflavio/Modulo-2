@@ -76,3 +76,118 @@ section#character-list {
 .species-character {
     padding-bottom: 10px;
 }
+
+.card h4 {
+    color: #a4a4a4;
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+.card p {
+    color: #ededed;
+}
+
+button#more {
+    display: flex;
+    margin: 2rem auto;
+
+    background-color: #00002c;
+    border: none;
+    outline: none;
+    color: #90ff05;
+    border-radius: 0.5rem;
+    padding: 0.6rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+button#more:hover {
+    transform: scale(0.95);
+}
+
+footer {
+    width: 100%;
+    height: 3rem;
+
+    background-image: url('https://i.imgur.com/T02tmb2.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+#modal-overlay {
+    background-color: #00000090;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#modal {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    min-height: 300px;
+    background-color: #3C3E44;
+    border-radius: 11px;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+#modal span {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #a8a8a8;
+    padding: .5rem;
+    border-radius: 0 11px 0 11px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#modal span:hover {
+    background-color: #797979;
+}
+
+#modal img {
+    object-fit: cover;
+    object-position: center;
+    border-radius: .5rem 0 0 .5rem;
+}
+
+#modal div {
+    padding: 1rem;
+}
+
+#modal h2 {
+    color: #ededed;
+    padding-bottom: 1rem;
+}
+
+#modal h4 {
+    color: #a4a4a4;
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+#modal p {
+    color: #ededed;
+    padding-bottom: 1rem;
+}
+
+.card span.character-id {
+    display: none;
+}
