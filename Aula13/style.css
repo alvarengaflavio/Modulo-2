@@ -76,3 +76,45 @@ section#character-list {
 .species-character {
     padding-bottom: 10px;
 }
+
+.card h4 {
+    color: #a4a4a4;
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+.card p {
+    color: #ededed;
+}
+
+button#more {
+    display: flex;
+    margin: 2rem auto;
+
+    background-color: #00002c;
+    border: none;
+    outline: none;
+    color: #90ff05;
+    border-radius: 0.5rem;
+    padding: 0.6rem 3rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+button#more:hover {
+    transform: scale(0.95);
+}
+
+footer {
+    width: 100%;
+    height: 3rem;
+
+    background-image: url('https://i.imgur.com/T02tmb2.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
